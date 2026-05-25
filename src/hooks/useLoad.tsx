@@ -4,7 +4,7 @@ export const useLoad  = () : { isLoading : boolean } => {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIsLoading(false), 2000)
+    const timeout = setTimeout(() => setIsLoading(false), 3000)
     return () => clearTimeout(timeout)
   },[]);
   return { isLoading }
