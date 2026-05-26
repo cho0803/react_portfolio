@@ -1,0 +1,16 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/mixins/responsive';
+@use '/src/styles/mixins/animation';
+
+// Floating particles
+.particle {
+  position: absolute;
+  width: 0.25rem; // w-1
+  height: 0.25rem;
+  background-color: rgba(colors.$blue-400, 0.6);
+  border-radius: 9999px;
+  animation: float 4s ease-in-out infinite;
+}
+
+@include animation.float
