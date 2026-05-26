@@ -1,10 +1,13 @@
 import React from 'react';
 
+import Particle from "pages/_components/Animations/Particle"
 import { info } from 'types/info';
 import styles from './Intro.module.scss';
+
 const Intro : React.FC = () => {
   return (
     <section className={styles.section}>
+      <Particle particle={100}/>
       <div className={styles.titleWrap}>
         <h1 className={styles.title}>PORTFOLIO</h1>
         <p className={styles.titleSlogan}>Creative Front-End Developer</p>
