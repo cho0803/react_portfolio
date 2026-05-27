@@ -13,4 +13,14 @@
   animation: float 4s ease-in-out infinite;
 }
 
+// Spinning
+.spin {
+  display: inline-block;
+  cursor: pointer;
+  width: 24px;
+  perspective: 1000px; /* 3D 입체 효과를 위한 원근감 */
+  transform: rotateY(var(--rotate-degree, 0deg));
+  transition: transform 2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
 @include animation.float
