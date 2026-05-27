@@ -21,7 +21,7 @@ export default ({ particle = 300 }: ParticleProps) => {
       top: `${Math.random() * 100}%`,
       delay: `${i * 0.05}s`
     }));
-  }, [particle]);
+  }, []);
   return (
     <div className={styles.branding}> 
       {particles.map((p) => (
