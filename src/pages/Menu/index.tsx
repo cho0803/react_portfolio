@@ -3,7 +3,7 @@ import styles from './Menu.module.scss';
 
 import { NavLink } from 'react-router-dom';
 import { TAB_ITEM, getContents } from 'utils/tab';
-import Particle from 'pages/_components/Animations/Particle';
+import Particle from 'Projects/Animations/Particle';
 import { TabContent } from 'types/project';
 
 export default () => {
