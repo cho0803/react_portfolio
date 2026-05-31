@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import styles from './Menu.module.scss';
-
 import { NavLink } from 'react-router-dom';
+
 import { TAB_ITEM, getContents , baseUrl} from 'utils/tab';
-import Particle from 'Projects/Animations/Particle';
 import { TabContent } from 'types/project';
+
+import Particle from 'Projects/Animations/Particle';
+import styles from './Menu.module.scss';
 
 export default () => {
   const [tabContentsList, setTabContentsList] = useState<TabContent[]>();
@@ -17,7 +18,7 @@ export default () => {
   };
 
   return (
-    <section id="main-dashboard" className={styles.pageContainer}>
+    <section className={styles.pageContainer}>
       <div className={styles.bgGlowLeft} />
       <div className={styles.bgGlowRight} />
       <Particle />
@@ -31,11 +32,11 @@ export default () => {
             </li>
           ))}
         </ul>
-        <div className={styles.tabContents}>
+        <div key={tabContentsList?.[0].item} className={styles.tabContents}>
           <ul>
             {tabContentsList?.map((item) => (
               <li key={item.id} >
-                <NavLink to={`${baseUrl}/${tabKey}/${item.item}`} className={styles.menuCard}>
+                <NavLink to={`${baseUrl}/${tabKey}/${item.item}`}>
                   <div className={styles.indicatorArea}>
                     <svg className={styles.menuStarSvg} viewBox="0 0 24 24">
                       <polygon points="12,2.5 14.9,8.5 21.5,9.5 16.8,14.1 17.9,20.7 12,17.6 6.1,20.7 7.2,14.1 2.5,9.5 9.1,8.5" />
