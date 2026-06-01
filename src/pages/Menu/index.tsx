@@ -19,6 +19,7 @@ export default () => {
 
   return (
     <section className={styles.pageContainer}>
+      <h2 className={styles.ir_su}>Menu</h2>
       <div className={styles.bgGlowLeft} />
       <div className={styles.bgGlowRight} />
       <Particle />
