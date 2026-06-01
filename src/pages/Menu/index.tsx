@@ -35,8 +35,8 @@ export default () => {
         <div key={tabContentsList?.[0].item} className={styles.tabContents}>
           <ul>
             {tabContentsList?.map((item) => (
-              <li key={item.id} >
-                <NavLink to={`${baseUrl}/${tabKey}/${item.item}`}>
+              <NavLink key={item.id} to={`${baseUrl}/${tabKey}/${item.item}`}>
+                <li>
                   <div className={styles.indicatorArea}>
                     <svg className={styles.menuStarSvg} viewBox="0 0 24 24">
                       <polygon points="12,2.5 14.9,8.5 21.5,9.5 16.8,14.1 17.9,20.7 12,17.6 6.1,20.7 7.2,14.1 2.5,9.5 9.1,8.5" />
@@ -45,8 +45,8 @@ export default () => {
                   <div className={styles.cardContent}>
                     <h3>{item.item}</h3>
                   </div>
-                </NavLink>
-              </li>
+                </li>
+              </NavLink>
             ))}
           </ul>
         </div>
