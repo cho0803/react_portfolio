@@ -35,133 +35,136 @@
     pointer-events: none;
     z-index: 0;
   }
-}
-
-.tab {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  position: relative;
-  z-index: 1;
-  padding: 3rem 0;
-
-  & > ul {
+  
+  .tab {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
-    width: max-content; 
-    max-width: calc(100% - 2rem);
-    border-radius: 50px;
-    padding: 0.5rem 1.5rem;
-    margin-bottom: 4.5rem;
-    backdrop-filter: blur(10px);
-    flex-shrink: 0;
-    opacity: 0;
-    animation: loadText 1s 0.5s ease forwards;
-
-    li {
-      button {
-        transition: 0.4s;
-        background: none;
-        border: 1px solid transparent;
-        outline: none;
-        color: #D1CCC4;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        font-size: 0.85rem;
-        font-weight: 700;
-        letter-spacing: 0.05em;
-        padding: 0.6rem 1.4rem;
-        cursor: pointer;
-        border-radius: 50px;
-        white-space: nowrap;
-        transition: all 0.3s ease;
-
-        &:hover {
-          color: colors.$point-blue;
-          border-color: colors.$point-blue;
-          background-color: rgba(37, 150, 190, 0.08);
-          box-shadow: 0 0 12px rgba(37, 150, 190, 0.2);
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    padding: 3rem 0;
+  
+    & > ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      width: max-content; 
+      max-width: calc(100% - 2rem);
+      border-radius: 50px;
+      padding: 0.5rem 1.5rem;
+      margin-bottom: 4.5rem;
+      backdrop-filter: blur(10px);
+      flex-shrink: 0;
+      opacity: 0;
+      animation: loadText 1s 0.5s ease forwards;
+  
+      li {
+        button {
+          transition: 0.4s;
+          background: none;
+          border: 1px solid transparent;
+          outline: none;
+          color: #D1CCC4;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          font-size: 0.85rem;
+          font-weight: 700;
+          letter-spacing: 0.05em;
+          padding: 0.6rem 1.4rem;
+          cursor: pointer;
+          border-radius: 50px;
+          white-space: nowrap;
+          transition: all 0.3s ease;
+  
+          &:hover {
+            color: colors.$point-blue;
+            border-color: colors.$point-blue;
+            background-color: rgba(37, 150, 190, 0.08);
+            box-shadow: 0 0 12px rgba(37, 150, 190, 0.2);
+          }
         }
       }
     }
-  }
-
-  .tabContents {
-    perspective: 1200px;
-    width: 100%;
-
-    ul {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
-      perspective: 1000px;
-
-      li {
-        width: 18rem;
-        padding: 1.5rem;
-        border-radius: 1.25rem;
-        cursor: pointer;
-        background: #232335; 
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        backdrop-filter: blur(8px); 
-        opacity: 0;
-        animation: loadText 1s ease forwards;
-
-        &:hover {
-          border-color: colors.$point-blue;
-          box-shadow: 0 0 15px rgba(37, 150, 190, 0.15);
-
-          h3 { color: colors.$point-blue !important; }
-          .cardHoverGlow { opacity: 1; }
-          .menuStarSvg {
-            stroke: colors.$point-blue !important;
-            fill: colors.$point-blue !important;
-            transform: rotateY(180deg);
+  
+    .tabContents {
+      perspective: 1200px;
+      width: 100%;
+  
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+        perspective: 1000px;
+  
+        li {
+          a {
+            display: inline-block;
+            width:18em;
+            padding: 1.5rem;
+            border-radius: 1.25rem;
+            cursor: pointer;
+            background: #232335; 
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            backdrop-filter: blur(8px); 
+            opacity: 0;
+            animation: loadText 1s ease forwards;
+  
+            &:hover {
+              border-color: colors.$point-blue;
+              box-shadow: 0 0 15px rgba(37, 150, 190, 0.15);
+    
+              h3 { color: colors.$point-blue !important; }
+              .cardHoverGlow { opacity: 1; }
+              .menuStarSvg {
+                stroke: colors.$point-blue !important;
+                fill: colors.$point-blue !important;
+                transform: rotateY(180deg);
+              }
+            }
+    
+            .indicatorArea {
+              float: right;
+    
+              .menuStarSvg {
+                width: 16px;
+                height: 16px;
+                stroke: rgba(255, 255, 255, 0.3);
+                fill: none;
+                transform-origin: center; 
+                transform-box: fill-box;
+                transition: transform 2.5s cubic-bezier(0.2, 0.8, 0.2, 1), stroke 0.4s, fill 0.4s, filter 0.4s;
+              }
+            }
+    
+            .cardContent {
+              margin: 0; 
+              display: flex;
+              align-items: center;
+              order: 1; 
+              z-index: 2;
+    
+              h3 {
+                margin: 0;
+                font-weight: 700;
+                color: #969086;
+                transition: color 0.3s ease;
+                font-size: 1.17em;
+                white-space: nowrap; 
+              }
+            }
           }
-        }
-
-        .indicatorArea {
-          float: right;
-
-          .menuStarSvg {
-            width: 16px;
-            height: 16px;
-            stroke: rgba(255, 255, 255, 0.3);
-            fill: none;
-            transform-origin: center; 
-            transform-box: fill-box;
-            transition: transform 2.5s cubic-bezier(0.2, 0.8, 0.2, 1), stroke 0.4s, fill 0.4s, filter 0.4s;
-          }
-        }
-
-        .cardContent {
-          margin: 0; 
-          display: flex;
-          align-items: center;
-          order: 1; 
-          z-index: 2;
-
-          h3 {
-            margin: 0;
-            font-weight: 700;
-            color: #969086;
-            transition: color 0.3s ease;
-            font-size: 1.17em;
-            white-space: nowrap; 
-          }
-        }
-
-        @for $i from 1 through 10 {
-          &:nth-child(#{$i}) {
-            animation-delay: #{(($i - 1) * 0.1) + 0.5}s;
+          @for $i from 1 through 10 {
+            &:nth-child(#{$i}) {
+              a{
+                animation-delay: #{(($i - 1) * 0.1) + 0.5}s;
+              }
+            }
           }
         }
       }
     }
   }
 }
-
 @include animation.loadText;
