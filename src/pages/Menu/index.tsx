@@ -9,7 +9,7 @@ import styles from './Menu.module.scss';
 
 export default () => {
   const [tabContentsList, setTabContentsList] = useState<TabContent[]>();
-  const [tabKey, setTabKey] = useState<string>('react')
+  const [tabKey, setTabKey] = useState<string>()
 
   const handleMouseOver = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const { key } = e.currentTarget.dataset;
