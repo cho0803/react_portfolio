@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { TAB_ITEM, getContents , baseUrl} from 'utils/tab';
-import { TabContent } from 'types/project';
+import { TabContent } from 'types/projects';
 
 import Particle from 'Projects/Animations/Particle';
 import styles from './Menu.module.scss';
