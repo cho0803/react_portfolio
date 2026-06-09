@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { TAB_ITEM, getContents , baseUrl} from 'utils/tab';
 import { TabContent } from 'types/projects';
 
-import Particle from 'Projects/Animations/Particle';
+import Particle from 'pages/Projects/Animations/Particle';
 import styles from './Menu.module.scss';
 
 export default () => {
