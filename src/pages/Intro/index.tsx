@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Particle from "Projects/Animations/Particle"
+import Particle from "pages/Projects/Animations/Particle"
 import { info } from 'utils/info';
 import styles from './Intro.module.scss';
 
