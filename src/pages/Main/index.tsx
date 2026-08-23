@@ -1,5 +1,5 @@
 import PortfolioIntro from "pages/_components/Intro"
-import { useLoad } from "hooks/useLoad"
+import { useLoad } from "hooks/ui/useLoad"
 import "./main.module.scss"
 
 export default () => {
