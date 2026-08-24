@@ -8,10 +8,10 @@ export default ( pageHeight : number = window.innerHeight ) => {
       const currentScroll = window.scrollY;
       if (e.deltaY > 0) {
         const nextTarget = Math.floor((currentScroll + pageHeight) / pageHeight) * pageHeight;
-        window.scrollTo({ top: nextTarget, behavior: "smooth" });
+        setTimeout(() => window.scrollTo({ top : nextTarget, behavior: "smooth" }), 500);
       } else {
         const prevTarget = Math.ceil((currentScroll - pageHeight) / pageHeight) * pageHeight;
-        window.scrollTo({ top: Math.max(0, prevTarget), behavior: "smooth" });
+        setTimeout(() => window.scrollTo({ top: Math.max(0, prevTarget), behavior: "smooth" }), 500);
       }
     };
     
