@@ -1,0 +1,256 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/mixins/responsive';
+@use '/src/styles/mixins/animation';
+@use '/src/styles/base/ir';
+
+.sectionWrap {
+  width: 100%;
+
+  .img {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    .titleWrap {
+      position: absolute;
+      z-index: 2; 
+      font-weight: 300;
+      letter-spacing: 0.05em;
+
+      &:hover {
+        .projectTitle p span {
+          color: rgba(255, 255, 255, 0.9); 
+        }
+        .text {
+          opacity: 1;
+        }
+      }
+
+      .projectTitle {
+        font-size: 5rem;
+        line-height: 1.1;
+
+        p {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 0 0.2em;
+          
+          span {
+            display: inline-block;
+            color: #7cbdff; 
+            font-weight: 600; 
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
+            font-family: 'Great Vibes', cursive;
+            padding: 10px 0;
+            transition: transform 0.4s ease, color 0.4s ease;
+
+            &:hover {
+              color: #bfa881 !important; 
+              transform: translateY(-8px);
+            }
+          }
+        }
+      }
+
+      .text {
+        width: 260px;
+        color: #000000;
+        position: absolute;
+        top: -60px;          
+        left: 50%;           
+        margin-left: -130px; 
+        z-index: 10;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+    }
+  }
+
+  .contentWrap {
+    width: 100%; 
+    background-color: #ebdcd9; 
+    display: flex;
+    justify-content: center;   
+
+    &:nth-child(2n+1) {
+      .content {
+        flex-direction: row;
+        
+        .left { 
+          &:hover {
+            .num {
+              transform: rotate(+8deg) translate(-1rem, -1rem);
+            }
+          }
+          .num {
+            top: -16.5rem;      
+            left: -4rem !important;
+            right: auto !important;
+          }
+        }
+      }
+    }
+
+    &:nth-child(2n) {
+      .content {
+        flex-direction: row-reverse;
+        .left {
+          &:hover {
+            .num {
+              transform: rotate(-8deg) translate(-1rem, -1rem);
+            }
+          }
+          .num {
+            top: -13rem;      
+            left: auto !important;
+            right: -4rem !important;
+          }
+        }
+      }
+    }
+
+    .content {
+      min-height: 100vh;
+      width: 100%;
+      max-width: 1400px;         
+      display: flex;
+      align-items: center;     
+      justify-content: space-between; 
+      padding: 0 60px;
+      position: relative;
+
+      .left {
+        position: relative;
+        max-width: 38rem;    
+        z-index: 1;
+        
+        &:hover {
+          .num {
+            font-size: 18rem; 
+            color: rgba(92, 79, 64, 0.55); 
+          }
+        }
+
+        .num {
+          position: absolute;
+          z-index: -1;
+          font-size: 15rem; 
+          font-weight: 900;
+          color: rgba(255, 255, 255, 0.45); 
+          line-height: 1;
+          font-family: 'Montserrat', sans-serif;
+          letter-spacing: -0.05em;
+          transform-origin: center center;
+          pointer-events: auto;
+          mix-blend-mode: overlay; 
+          transition: transform 0.7s ease, color 0.7s ease;
+          
+        }
+
+        .title {
+          font-size: 2.2rem;
+          font-weight: 600;
+          color: #9c6c64; 
+          margin-bottom: 0.75em; 
+          font-family: 'Montserrat', sans-serif;
+        }
+
+        .subTitle {
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 700;
+          font-size: 2.625em; 
+          line-height: 120%;
+          letter-spacing: -0.02em;
+          color: #2b2721; 
+          margin-bottom: 0.75em; 
+        }
+
+        .description {
+          font-size: 0.95rem;
+          line-height: 1.8;
+          color: #3b3935; 
+          word-break: keep-all; 
+          white-space: pre-wrap; 
+        }
+
+        .num, .title, .subTitle, .description {
+          animation: loadText 1s 0.5s ease forwards;
+        }
+
+        @for $i from 1 through 10 {
+          & > *:nth-child(#{$i}) {
+            animation-delay: #{(($i - 1) * 0.1) + 0.5}s;
+          }
+        }
+      }
+
+      .right {
+        flex-shrink: 0;
+        width: 32rem;              
+        height: 27rem;
+        position: relative;
+        background: #ffffff; 
+        padding: 2.5em 2.5em 5.5em 2.5em; 
+        box-shadow: 0 30px 60px rgba(117, 103, 76, 0.08);  
+        overflow: hidden;
+        border-radius: 2px;
+        z-index: 2;
+
+        &:hover {
+          img {
+            transform: scale(1.06);
+          }
+
+          .title {
+            letter-spacing: 0.45em;
+            opacity: 1;
+          }
+        }
+
+        .leftImgWrap {
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          position: relative;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.95) contrast(1.02); 
+            transition: transform 1.8s cubic-bezier(0.25, 1, 0.5, 1);
+          }
+        }
+
+        .title {
+          position: absolute;
+          bottom: 1.5rem;          
+          left: 0;
+          width: 100%;             
+          text-align: center;      
+          font-family: 'Cormorant Garamond', serif;
+          font-size: 0.95rem;      
+          font-weight: 300;        
+          color: #4a4542; 
+          letter-spacing: 0.35em;  
+          text-transform: uppercase;
+          font-style: normal;
+          opacity: 0.85;
+          z-index: 10; 
+          transition: letter-spacing 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.8s ease;
+        }
+      }
+    }
+  }
+}
+
+@include animation.loadText;
+
+
