@@ -7,9 +7,9 @@ export interface IprojectContents{
   id: string;
   num: string;
   title: string;
-  subTitle: string;
+  subTitle?: string;
   description: string;
-  imgSrc: any;
-  imgAlt: string;
-  imgTitle: string;
+  imgSrc?: any;
+  imgAlt?: string;
+  imgTitle?: string;
 }
