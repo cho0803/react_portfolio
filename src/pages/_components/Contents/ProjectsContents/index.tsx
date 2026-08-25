@@ -3,7 +3,7 @@ import { useParams, useLocation } from 'react-router-dom';
 import { IprojectContents } from "types/projects";
 import ProjectImage from "assets/images/Project.jpg"
 import useScroll from 'hooks/ui/useScroll';
-import styles from"./projects.module.scss";
+import styles from"./projectsContents.module.scss";
 
 interface IProps {
   projectContents: IprojectContents[]
