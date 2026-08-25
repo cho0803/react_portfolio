@@ -9,7 +9,7 @@ export default ({ children }: RotateContainerProps) => {
   const [degree, setDegree] = useState<number>(0);
 
   const spin = () => {
-    setDegree((prev) => prev + 360);
+    setDegree((prev) => prev >= 360 ? prev % 360 : prev + 360);
   };
 
   return (
