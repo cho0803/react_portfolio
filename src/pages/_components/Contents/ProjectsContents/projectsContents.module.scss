@@ -81,17 +81,11 @@
     &:nth-child(2n+1) {
       .content {
         flex-direction: row;
-        
-        .left { 
+        .num {
+          top: -1.5rem;      
+          left: 1.5rem;
           &:hover {
-            .num {
-              transform: rotate(+8deg) translate(-1rem, -1rem);
-            }
-          }
-          .num {
-            top: -16.5rem;      
-            left: -4rem !important;
-            right: auto !important;
+            transform: rotate(+8deg) translate(-1rem, -1rem);
           }
         }
       }
@@ -100,17 +94,12 @@
     &:nth-child(2n) {
       .content {
         flex-direction: row-reverse;
-        .left {
-          &:hover {
-            .num {
-              transform: rotate(-8deg) translate(-1rem, -1rem);
+        .num {
+          top: 1.5rem;      
+          right: 1rem;
+            &:hover {
+            transform: rotate(-8deg) translate(-1rem, -1rem);
             }
-          }
-          .num {
-            top: -13rem;      
-            left: auto !important;
-            right: -4rem !important;
-          }
         }
       }
     }
@@ -126,16 +115,8 @@
       position: relative;
 
       .left {
-        position: relative;
         max-width: 38rem;    
         z-index: 1;
-        
-        &:hover {
-          .num {
-            font-size: 18rem; 
-            color: rgba(92, 79, 64, 0.55); 
-          }
-        }
 
         .num {
           position: absolute;
@@ -149,16 +130,12 @@
           transform-origin: center center;
           pointer-events: auto;
           mix-blend-mode: overlay; 
-          transition: transform 0.7s ease, color 0.7s ease;
-          
-        }
-
-        .title {
-          font-size: 2.2rem;
-          font-weight: 600;
-          color: #9c6c64; 
-          margin-bottom: 0.75em; 
-          font-family: 'Montserrat', sans-serif;
+          transition: transform 0.8s ease, color 0.8s ease;
+                  
+          &:hover {
+            font-size: 18rem; 
+            color: rgba(92, 79, 64, 0.55); 
+          }
         }
 
         .subTitle {
@@ -235,16 +212,17 @@
           left: 0;
           width: 100%;             
           text-align: center;      
-          font-family: 'Cormorant Garamond', serif;
-          font-size: 0.95rem;      
-          font-weight: 300;        
-          color: #4a4542; 
+          font-family: 'Montserrat', sans-serif;
+          font-size: 1.5rem;      
+          font-weight: bold;        
+          color: #9c6c64; 
           letter-spacing: 0.35em;  
           text-transform: uppercase;
           font-style: normal;
           opacity: 0.85;
           z-index: 10; 
           transition: letter-spacing 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.8s ease;
+          animation: loadText 1s 0.8s ease forwards;
         }
       }
     }
