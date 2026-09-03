@@ -33,7 +33,7 @@ export default () => {
             </li>
           ))}
         </ul>
-        <div key={tabContentsList?.[0].item} className={styles.tabContents}>
+        <div key={tabContentsList?.[0]?.item} className={styles.tabContents}>
           <ul>
             {tabContentsList?.map((item) => (
               <li key={item.id}>
