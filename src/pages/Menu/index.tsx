@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { TAB_ITEM, getContents , baseUrl} from 'utils/tab';
+import { TAB_ITEM, getContents, baseUrl} from 'utils/tab';
 import { TabContent } from 'types/projects';
 
 import Particle from 'pages/Projects/Animations/Particle';
@@ -37,7 +37,7 @@ export default () => {
           <ul>
             {tabContentsList?.map((item) => (
               <li key={item.id}>
-                <NavLink to={`${baseUrl}/${tabKey}/${item.item}`} state={{ fromLink: true }}>
+                <NavLink to={`${baseUrl}/${tabKey}/${item.item.toLowerCase()}`} state={{ fromLink: true }}>
                     <div className={styles.indicatorArea}>
                       <svg className={styles.menuStarSvg} viewBox="0 0 24 24">
                         <polygon points="12,2.5 14.9,8.5 21.5,9.5 16.8,14.1 17.9,20.7 12,17.6 6.1,20.7 7.2,14.1 2.5,9.5 9.1,8.5" />
