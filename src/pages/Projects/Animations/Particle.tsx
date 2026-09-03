@@ -23,7 +23,7 @@ export default ({ particle = 300 }: ParticleProps) => {
     }));
   }, []);
   return (
-    <div className={styles.branding}> 
+    <> 
       {particles.map((p) => (
         <div
           key={p.id}
@@ -35,6 +35,6 @@ export default ({ particle = 300 }: ParticleProps) => {
           }}
         />
       ))}
-    </div>
+    </>
   );
 }
