@@ -1,0 +1,13 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/mixins/responsive';
+@use '/src/styles/mixins/animation';
+
+// Spinning Effect
+.spin {
+  display: inline-block;
+  cursor: pointer;
+  width: inherit;
+  transform: rotateY(var(--rotate-degree, 0deg));
+  transition: transform 2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}

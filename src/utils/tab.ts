@@ -34,6 +34,16 @@ const TAB_ITEM = [
       },
     ],
   },
+  {
+    tab: 'EFFECT',
+    key: 'effect',
+    items: [
+      {
+        id: 1,
+        item: 'Spinning',
+      },
+    ],
+  },
 ]
 
 const getContents = (value: string) => {
