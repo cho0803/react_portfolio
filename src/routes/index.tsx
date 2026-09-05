@@ -1,11 +1,10 @@
 import { Routes, Route, Outlet, useLocation } from 'react-router-dom'
 import { useEffect } from 'hooks'
 
-import Main from 'pages/Main'
 import styles from './routes.module.scss'
 import Main from 'pages/Main'
 import Menu from 'pages/Menu'
-import About from 'pages/About'
+// import About from 'pages/About'
 import Reacts from 'pages/Projects/Reacts'
 import Animations from 'pages/Projects/Animations'
 import Effects from 'pages/Projects/Effects'
