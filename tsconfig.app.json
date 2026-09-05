@@ -26,9 +26,16 @@
     /* src 기준 절대 경로 설정 */
     // "baseUrl": "src",
 
-    /* Path Alias 설정 @/pages/Main  */
+    /* Path 경로 설정 */
     "paths": {
+      /* Path 절대경로 설정 pages/Main */
       "*": ["./src/*"],
+
+      /* Path 상대경로 설정 ./pages/Main */
+      // "./*": ["./src/*"],
+
+      /* Path Alias 설정 @/pages/Main */
+      // "@/*": ["./src/*"],
     }
   },
   "include": ["src"]
